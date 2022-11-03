@@ -1,0 +1,100 @@
+/* Global Rule  */
+:root {
+    --main-color: #2196F3;
+    --second-color: #1787e0;
+}
+
+*{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.container {
+    margin:  0px auto;
+    padding: 0px 15px;
+}
+
+/* small Screen */
+@media (min-width: 768px) {
+    .container {
+        width: 720px;
+    }
+}
+
+/* Meduim Screen */
+@media (min-width: 992px) {
+    .container {
+        width: 990px;
+    }
+}
+
+/* Large Screen */
+@media (min-width: 1200px) {
+    .container {
+        width: 1140px;
+    }
+}
+
+/* End Global Rule  */
+
+/* footer section */
+header{
+        padding: 15px;
+}
+
+header .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+}
+
+header .logo{
+        color: var(--main-color);
+        font-weight: 600;
+        font-size: 30px;
+        transition: 0.3s;
+    }
+
+header .logo:hover{
+        color: var(--second-color);
+    }
+
+header nav{
+        display: flex;
+        gap: 15px;
+}
+
+header a{
+        color: black;
+        font-size: 17px;
+        transition: 0.3s;
+}
+
+header a:hover{
+    color: var(--second-color);
+}
+
+/********************************************/
