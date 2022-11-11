@@ -2,6 +2,9 @@
 :root {
     --main-color: #2196F3;
     --second-color: #1787e0;
+    --paragraph-color : #666666 ;
+    --duration-transation : 0.5s ; 
+    --background-color : #ececec ;
 }
 
 *{
@@ -57,11 +60,18 @@ a{
     }
 }
 
+@keyframes botomTop {
+    from{padding-bottom: 100px;}
+    to{ padding-bottom: 0px;}
+}
+
 /* End Global Rule  */
 
 /* footer section */
 header{
-        padding: 15px;
+    /* تلوين الاجزاء مهم في بعض الأحيان لي لاتجد مشاكل في اندماج أجزاء متتالية  */
+    box-shadow: 0px 0px 10px #ddd;
+    background-color: white;
 }
 
 header .container{
@@ -69,32 +79,244 @@ header .container{
         align-items: center;
         justify-content: space-between;
         flex-wrap: wrap;
+        position: relative;
 }
 
-header .logo{
-        color: var(--main-color);
-        font-weight: 600;
-        font-size: 30px;
-        transition: 0.3s;
-    }
+header .logo {
+    /*
+ في الاجزاء الصغيرة من الأفضل استخدام ارتفاع محدد كي لايتم
+ افساده من خلال تغير احجام العناصر الداخلية
+ */
+ color: var(--main-color);
+ font-weight: 500;
+ font-size: 26px;
+ transition: 0.3s;
+ display: flex;
+ height: 70px;
+ align-items: center;
+ justify-content: center;
+}
 
-header .logo:hover{
+@media (max-width: 767px) {
+    header .logo {
+        width: 100%;
+    }
+}
+
+header .logo:hover {
         color: var(--second-color);
     }
 
-header nav{
-        display: flex;
-        gap: 15px;
+header .navbar {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-header a{
-        color: black;
+@media (max-width: 767px){
+    header .navbar{
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+}
+
+header .navbar > a {
+    color: black;
+    font-size: 18px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0px 10px;
+    transition: var(--duration-transation);
+    position: relative;
+}
+
+@media (max-width: 767px){
+    header .navbar > a {
+        font-size: 14px;
+        height: auto;
+        padding: 10px;
+    }
+}
+
+
+header .navbar>a::before{
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 4px;
+    background-color: var(--second-color);
+    top: 0px;
+    left: 0;
+    transition: var(--duration-transation);
+
+}
+
+header .navbar > a:hover::before{
+    width: 100%;
+}
+
+header .navbar > a:hover{
+    background-color: #fafafa;
+    color: var(--main-color);
+}
+
+
+
+ .mega-menu{
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    top: 100%;
+    z-index: 99999;
+    transition: 0.3s;
+    box-shadow: 0px 0px 10px #ddd;
+    background-color: white;
+    display: flex;
+    padding: 10px;
+}
+
+.mega-menu .image{
+    flex: 1;
+    padding: 15px;
+}
+.mega-menu .image img{
+    width: 100%;
+}
+
+
+.mega-menu div {
+    flex: 1;
+}
+
+.mega-menu li{
+    padding: 15px;
+}
+
+.mega-menu li a{
+    color: var(--main-color);
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.mega-menu li a i{
+    margin-right: 10px;
+}
+
+
+
+/********************************************/
+/* Start Landing */
+.landing{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.landing::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: var(--background-color);
+    transform: skewY(-7deg);
+    transform-origin: top left;
+}
+
+/* حاول أن تضع دائما قياسات العنصر المباشر الرئيسي  */
+.landing .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 30px;
+    height: calc(100vh - 100px);
+}
+
+
+@media (max-width: 767px){
+    .landing .container {
+        height: calc(100vh - 200px);
+    }
+}
+
+.landing .container .text{
+    flex: 1;
+}
+
+@media (max-width: 767px){
+    .landing .container .text{
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.landing .container .text h1{
+    font-weight: lighter;
+}
+
+.landing .container .text p{
+    font-size: 19px;
+    color: var(--paragraph-color);
+    line-height: 1.5;
+}
+
+@media (max-width: 767px){
+    .landing .container .text h1{
+        font-size: 25px;
+    }
+    
+    .landing .container .text p{
         font-size: 17px;
-        transition: 0.3s;
+    }
 }
 
-header a:hover{
+
+.landing .image{
+    height: 50%;
+    width: 50%;
+    position: relative;
+}
+
+@media (max-width: 767px){
+    .landing .image{
+        display: none;
+    }
+}
+
+@keyframes bottom-top {
+    0% ,100%{bottom: 20px;}
+    50% {bottom:0px ;}
+  }
+
+/* استخدم الماكس مع عرض محدد يضبط الصورة بشكل جيد */
+.landing .image img {
+    max-width: 100%;
+    width: 600px;
+    animation: bottom-top 4s infinite linear;
+    position: absolute;
+}
+
+.landing a {
+    position: absolute;
+    bottom: 0px;
+    color: var(--main-color);
+    animation: bottom-top 1.5s infinite;
+    transition: 0.3s;
+}
+
+.landing a:hover{
     color: var(--second-color);
 }
+
+
+
+
+
+
+
 
 /********************************************/

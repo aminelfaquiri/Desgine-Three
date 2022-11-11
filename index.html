@@ -15,20 +15,61 @@
         rel="stylesheet">
 </head>
 <body>
-   
+   <!-- start Header -->
     <header>
-        <!-- can use Container in any section -->
+        <!-- can use Container inside any section -->
         <div class="container">
             <!--For Logo use <a> => Link to redirect user to Home Page -->
             <a href="#" class="logo">Amin</a>
-            <nav>
+            <ul class="navbar">
                 <a href="#articel">Articles</a>
-                <a href="#Gallary">Gallary</a>
+                <a href="#Gallary">Gallary</a> 
                 <a href="#Features">Features</a>
                 <a href="#">Other Links</a>
-            </nav>
+                <!-- Start Mega Menu -->
+                <div class="mega-menu">
+                    <div class="image"><img src="img/megamenu.png" alt="">
+                    </div>
+                    <!-- من الأفضل وضل الأيقونات داخل البوطونة لتحكم بشكل أفضل -->
+                    <div class="part-one">
+                        <li><a href="#"><i class="far fa-comments fa-fw"></i>Testimonials</a></li>
+                        <li><a href="#"><i class="far fa-user fa-fw"></i>Team Members</a></li>
+                        <li><a href="#"><i class="far fa-building fa-fw"></i>Services</a></li>
+                        <li><a href="#"><i class="far fa-check-circle fa-fw"></i>Our Skills</a></li>
+                        <li><a href="#"><i class="far fa-clipboard fa-fw"></i>How It Works</a></li>
+                    </div>
+                    <div class="part-two">
+                        <li><a href="#"><i class="far fa-calendar-alt fa-fw"></i>Events</a></li>
+                        <li><a href="#"><i class="fas fa-server fa-fw"></i>Pricing Plans</a></li>
+                        <li><a href="#"><i class="far fa-play-circle fa-fw"></i>Top Videos</a></li>
+                        <li><a href="#"><i class="far fa-chart-bar fa-fw"></i>Stats</a></li>
+                        <li><a href="#"><i class="fas fa-percent fa-fw"></i>Request A Discount</a></li>
+                    </div>      
+                </div>
+                <!-- End Mega Menu -->
+            </ul>
         </div>
     </header>
+     <!-- End Header -->
+    <!-- Start Landing -->
+    <div class="landing">
+        <div class="container">
+            <div class="text">
+                <h1>Welcome, To Elzero World</h1>
+                <p>
+                    Here Iam gonna share everything about my life.
+                    Books Iam reading, Games Iam Playing, Stories and Events
+                </p>
+            </div>
+            <div class="image">
+                <img src="img/landing-image.png" alt="landing image">
+            </div>
+        </div>
+        <!-- لم تضع في الكونتينر لأنها لاتعتبر محتوى يمكن أن يحصل فيه مشكلة -->
+        <a href="#articel"><i class="fas fa-angle-double-down fa-2x"></i></i></a>
+    </div>
+    <!-- End Landing -->
+
     
 </body>
 </html>
